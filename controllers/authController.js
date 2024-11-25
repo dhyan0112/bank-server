@@ -17,7 +17,7 @@ exports.register = async (req, res) => {
     await user.save();
     res.status(201).json({ message: 'User registered successfully' });
   } catch (error) {
-    res.status(400).json({ error: 'Username already exists' });
+    res.status(400).json({ error: error.message });
   }
 };
 
